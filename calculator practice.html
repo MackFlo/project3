@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <form>
+            <div class="row">
+                <div class="col">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Profit Percent of ARV (%)" id="ProfPer" aria-describedby="basic-addon1">
+                        <div class="input-group-append">
+                            <span class="input-group-text" id="PermProf">''</span>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Realtor and Closing (%)" id="RealClos" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <span class="input-group-text" id="PermClos">''</span>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Holding Cost (%)" id="HoldCost" aria-describedby="basic-addon3">
+                        <div class="input-group-append">
+                            <span class="input-group-text" id="PermHold">''</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="After Repair Value" id="ARV">
+                    <ul class="list-group">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Cash buyer profit per cost
+                            <span class="badge badge-primary badge-pill"></span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Dollar/square foot
+                            <span class="badge badge-primary badge-pill"></span>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+
+                </div>
+                <div class="col">
+                    <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var Profper = $("#ProfPer").val()/100;
+            var RealClos = $("#RealClos").val()/100;
+            var HoldCost = $("#HoldCost").val()/100;
+            var ARV = $("#ARV").val();
+
+
+            $("#submit").on("click", function() {
+                var permProf=$("#PermProf").val() = Profper * ARV
+            });
+
+
+        });
+    </script>
+</body>
+
+</html>
